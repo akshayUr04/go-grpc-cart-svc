@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package cart;
+
+option go_package = "./pkg/pb";
+
+service CartService {
+    rpc AddToCart(AddToCartRequest)returns(AddToCartResponce);
+    rpc RemoveFromCart(RemoveFromCartRequest)returns(RemoveFromcartResponce);
+}
+
+//Add to cart
+message AddToCartRequest{
+    int64 productId = 1;
+}
+message AddToCartResponce{
+    int64 status = 1;
+    string error = 2;
+}
+
+message RemoveFromCartRequest{
+    int64 productId = 1;
+}
+message RemoveFromcartResponce{
+    int64 status = 1;
+    string error = 2;
+}
