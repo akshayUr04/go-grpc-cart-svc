@@ -12,6 +12,7 @@ service CartService {
 //Add to cart
 message AddToCartRequest{
     int64 productId = 1;
+    int64 userId = 2;
 }
 message AddToCartResponce{
     int64 status = 1;

@@ -6,7 +6,7 @@ option go_package = "./pkg/pb";
 
 service ProductService {
     rpc FindOne(FindOneRequest) returns (FindOneResponse);
-    rpc DecreaseStock(DecreaseStockRequest) returns (DecreaseStockResponse);
+    // rpc DecreaseStock(DecreaseStockRequest) returns (DecreaseStockResponse);
 }
 
 message FindOneData {
@@ -26,12 +26,12 @@ message FindOneResponse{
     FindOneData data = 3;
 }
   
-message DecreaseStockRequest{
-    int64 id = 1;
-    int64 orderId = 2;
-}
-message DecreaseStockResponse{
-    int64 status = 1;
-    string error = 2;
-}
+// message DecreaseStockRequest{
+//     int64 id = 1;
+//     int64 orderId = 2;
+// }
+// message DecreaseStockResponse{
+//     int64 status = 1;
+//     string error = 2;
+// }
   

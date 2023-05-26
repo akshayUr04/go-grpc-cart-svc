@@ -1,6 +1,7 @@
 package client
 
 import (
+	"context"
 	"fmt"
 
 	"github.com/akshayUr04/go-grpc-cart-svc/pkg/pb"
@@ -21,4 +22,11 @@ func InintProductServiceClient(url string) ProductServiceClient {
 		Client: pb.NewProductServiceClient(cc),
 	}
 	return c
+}
+
+func (c *ProductServiceClient) FindOne(productId int64) (*pb.FindOneResponse, error) {
+	req := &pb.FindOneRequest{
+		Id: productId,
+	}
+	return c.Client.FindOne(context.Background(), req)
 }
